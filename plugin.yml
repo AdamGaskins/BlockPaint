@@ -1,0 +1,19 @@
+name: BlockPaint
+main: me.entity.paint.Paint
+version: 1.0
+description: >
+             A simple plugin that allows you to replace blocks by right clicking on them.
+commands:
+   paint:
+      description: Toggles paint mode
+      permission: blockpaint.paint
+      usage: /paint [<player>]
+
+permissions:
+    blockpaint.*:
+        description: Gives access to all blockpaint commands.
+        children:
+            paint.paint: true
+    blockpaint.paint:
+        description: Allow you to use the /paint command.
+        default: op
