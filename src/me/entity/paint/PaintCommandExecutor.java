@@ -53,14 +53,14 @@ public class PaintCommandExecutor implements CommandExecutor
 	
 	private void togglePaintMode(CommandSender callback, String player)
 	{
-		if(global.Painters.contains(player))
+		if(global.painters.contains(player))
 		{
-			global.Painters.remove(player);
+			global.painters.remove(player);
 			callback.sendMessage("Paint mode turned off.");
 		}
 		else
 		{
-			global.Painters.add(player);
+			global.painters.add(player);
 			callback.sendMessage("Paint mode turned on.");
 		}
 	}

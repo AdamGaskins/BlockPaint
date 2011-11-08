@@ -1,6 +1,5 @@
 package me.entity.paint;
 
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockListener;
@@ -17,12 +16,12 @@ public class PaintBlockListener extends BlockListener
 	@Override
 	public void onBlockPlace(BlockPlaceEvent event) 
 	{
-		if(Global.Painters.contains(event.getPlayer().getName()))
+		if(Global.painters.contains(event.getPlayer().getName()))
 		{
-			Block against = event.getBlockAgainst();
-			Block placed = event.getBlockPlaced();
-			against.setType(placed.getType());
-			against.setData(placed.getData());
+//			Block against = event.getBlockAgainst();
+//			Block placed = event.getBlockPlaced();
+//			against.setType(placed.getType());
+//			against.setData(placed.getData());
 			event.setCancelled(true);
 		}
 	}
@@ -31,7 +30,7 @@ public class PaintBlockListener extends BlockListener
 	public void onBlockBreak(BlockBreakEvent event)
 	{
 		Player player = event.getPlayer();
-		if(Global.Painters.contains(player.getName()))
+		if(Global.painters.contains(player.getName()))
 		{
 //			int amount = 1; // creative
 //			if(player.getGameMode() == GameMode.SURVIVAL)
